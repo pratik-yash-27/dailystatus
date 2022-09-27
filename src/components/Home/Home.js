@@ -1,10 +1,12 @@
 import React from 'react'
+import Header from '../Header/Header'
 
 const Home = () => {
     return (
-        <div>
+        <div className='container'>
+            {/* <Header/> */}
             <div className="bg">
-                <img src="./assets/main2.png" className='imageOne'  />
+                <img src="./assets/main2.png" className='imageOne' alt='' />
             </div>
             <div className="content">
                 <h1>Ketan</h1>
@@ -17,9 +19,9 @@ const Home = () => {
             </div>
             <div className="social">
                 <ul>
-                    <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i className="fab fa-dribbble"></i></a></li>
+                    <li><i className="fab fa-facebook-f"></i></li>
+                    <li><i className="fab fa-twitter"></i></li>
+                    <li><i className="fab fa-dribbble"></i></li>
                 </ul>
             </div>
 

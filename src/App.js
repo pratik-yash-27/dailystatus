@@ -1,39 +1,61 @@
+import "./App.css";
 
-import './App.css';
-import Clock from './components/Clock/Clock';
-import Header from './components/Header/Header';
-import Home from './components/Home/Home';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import About from './pages/About';
-import Homes from './pages/Homes';
-import Resume from './pages/Resume';
+import Home from "./components/Home/Home";
+
+import About from "./pages/About";
+
 import Portfolio from "./pages/Portfolio";
-import Contact from './pages/Contact';
+import Contact from "./pages/Contact";
+import { useRef } from "react";
 
-const App=()=> {
- 
+const App = () => {
+  const home = useRef(null);
+  const about = useRef(null);
+  const portfolio = useRef(null);
+  const contact = useRef(null);
+
+  const scrollToSection = (elementRef) => {
+    window.scrollTo({
+      top: elementRef.current.offsetTop,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       <div className="hero">
-        {/* <Header />/ */}
-        <Home />
+        <header>
+          <nav>
+            <h2 class="logo">Portfolio</h2>
+            <ul>
+              <li onClick={() => scrollToSection(home)}>Home</li>
+              <li onClick={() => scrollToSection(about)}>About</li>
 
-        <BrowserRouter>
-          {/* <Home /> */}
-          <Routes>
-            <Route path="/" element={<Header />} />
-            <Route path="Homes" element={<Homes />} />
-            <Route path="About" element={<About />} />
-            <Route path="Resume" element={<Resume />} />
-            <Route path="Portfolio" element={<Portfolio />} />
-            <Route path="Contact" element={<Contact />} />
-          </Routes>
-        </BrowserRouter>
+              <li onClick={() => scrollToSection(portfolio)}>Portfolio</li>
+
+              <li onClick={() => scrollToSection(contact)}>Contact</li>
+            </ul>
+          </nav>
+        </header>
+
+        <div ref={home}>
+          <Home />
+        </div>
+      
+        <div ref={about}>
+          <About />
+        </div>
+        <div ref={portfolio}>
+          <Portfolio />
+        </div>
+        <div ref={contact}>
+          <Contact />
+        </div>
+
+       
       </div>
-
-      {/* <Clock/> */}
     </>
   );
-}
+};
 
 export default App;

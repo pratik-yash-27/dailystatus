@@ -21,7 +21,7 @@ const Featured = () => {
           className="featuredImg"
         />
         <div className="featuredTitles">
-          <h1>Austin</h1>
+          <h1>Aus</h1>
           <h2>523 properties</h2>
         </div>
       </div>

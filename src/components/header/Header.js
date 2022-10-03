@@ -98,6 +98,7 @@ navigate("/hotels",{state:{destination,date,options}})
                       moveRangeOnFirstSelection={false}
                       ranges={date}
                       className="date"
+                      minDate={new Date()}
                     />
                   )}
                 </div>
